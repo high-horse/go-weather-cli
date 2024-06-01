@@ -44,22 +44,20 @@ To use the application, follow these steps:
    ```
 
 2. Navigate to the project directory:
-```
+    ```
     bash
+    cd go-weather-cli
+    ```
 
-cd go-weather-cli
-```
+3. Build the application:
 
-3. Build the application:```
-
-bash
-
-go build
-```
+    ```
+    bash
+    go build
+    ```
 
 4. Run the application with the desired location as an argument:
-```
-bash
-
-./go-weather-cli "kathmandu"
-```
+    ```
+    bash
+    ./go-weather-cli "kathmandu" // or any other location
+    ```
