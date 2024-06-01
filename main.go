@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"io"
 	"net/http"
+	"os"
 	"time"
 
 	"github.com/fatih/color"
@@ -37,7 +38,11 @@ type Weather struct {
 }
 
 func main() {
-	res, err := http.Get("http://api.weatherapi.com/v1/forecast.json?key=db03a6cec6f8441ba52173233240106&q=london")
+	q := "kathmandu"
+	if len(os.Args) >= 2  {
+		q = os.Args[1]
+	}
+	res, err := http.Get("http://api.weatherapi.com/v1/forecast.json?key=db03a6cec6f8441ba52173233240106&q="+ q +"&days=1&aqi=no&alerts=no")
 	if err != nil {
 		panic(err)
 	}
